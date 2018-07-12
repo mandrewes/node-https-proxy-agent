@@ -21,14 +21,8 @@ module.exports = HttpsProxyAgent;
  *
  * @api public
  */
-  var yolo = true;
-  
-function HttpsProxyAgent(opts) {
 
-  if ( yolo ) {
-    return new Agent(opts);
-  }
-  
+function HttpsProxyAgent(opts) {
   if (!(this instanceof HttpsProxyAgent)) return new HttpsProxyAgent(opts);
   if ('string' == typeof opts) opts = url.parse(opts);
   if (!opts)
@@ -66,9 +60,6 @@ function HttpsProxyAgent(opts) {
 }
 inherits(HttpsProxyAgent, Agent);
 
-if (yolo) {
-  return;
-}
 /**
  * Called when the node-core HTTP client library is creating a new HTTP request.
  *
