@@ -70,6 +70,8 @@ HttpsProxyAgent.prototype.callback = function connect(req, opts, fn) {
   var proxy = this.proxy;
 
   // create a socket connection to the proxy server
+  console.log("HttpsProxyAgent.connect " + JSON.stringify(opts,0,4));
+  
   var socket;
   if (this.secureProxy) {
     socket = tls.connect(proxy);
